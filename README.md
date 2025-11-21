@@ -1,113 +1,136 @@
 # 📊 Marketing Performance Dashboard (Power BI)
 
-This project analyzes marketing campaign data to measure performance, ROI, customer segments, and channel effectiveness.  
-It demonstrates my skills in **Power BI, Excel, Power Query, KPIs, data modeling, business insights, and data storytelling**.
+This project analyzes multi-channel marketing campaign data to measure spend efficiency, ROI, channel performance, and campaign effectiveness.  
+It demonstrates my skills in **Power BI, DAX, data modeling, Power Query, and business analytics**.
 
 ---
 
-## 🔍 **Project Objective**
+## 🔍 **Objective**
 
-Marketing teams often struggle to understand:
-- Which channels bring the highest ROI  
-- Which campaigns drive conversions  
-- Which customer segments generate the most revenue  
-- How performance changes over time  
+Marketing teams often ask:
+- Which channels deliver the best ROI?
+- Which campaigns generate the most revenue?
+- Where are we overspending (high CPA)?
+- Which channels drive the strongest engagement (CTR)?
+- How is performance trending over time?
 
-This dashboard provides a clear, interactive way to answer these questions.
+This dashboard answers these questions through clear, interactive visuals.
 
 ---
 
 ## 🛠️ **Tools Used**
 
-- **Power BI** (main dashboard)
-- **Excel** (data cleaning + source files)
-- **Power Query** (transformations)
-- **DAX** (KPIs & measures)
-- *(Optional)* SQL for additional queries
+- **Power BI Desktop**  
+- **Power Query** (data cleaning & transformation)  
+- **DAX** (KPIs & measures)  
+- **Excel** (source dataset)  
 
 ---
 
-## 📁 **Dataset**
+## 📁 **Dataset Overview**
 
 The dataset includes:
-- Campaigns  
-- Channels (Social, Email, Search, Display, etc.)
+- Date  
+- Campaign Name  
+- Channel  
 - Spend  
 - Impressions  
 - Clicks  
-- Conversions  
+- Leads  
+- Orders  
 - Revenue  
-- Customer segments  
-- Dates  
 
-> I will upload a cleaned Excel sample dataset (synthetic) for demonstration.
+Derived metrics calculated:
+- **CTR (Click-Through Rate)**  
+- **CPC (Cost Per Click)**  
+- **CPL (Cost Per Lead)**  
+- **CPA (Cost Per Acquisition)**  
+- **ROAS (Return on Ad Spend)**  
 
 ---
 
-## ⚙️ **Process & Steps**
+## ⚙️ **Data Preparation (Power Query)**
 
-### **1. Data Preparation (Excel + Power Query)**
-- Removed duplicates  
-- Standardized date formats  
-- Cleaned channel labels  
-- Created calculated columns (CTR, CPC, CPA etc.)  
+Steps performed:
+- Renamed and standardized column names  
+- Corrected data types (Date, Numeric, Text)  
+- Created calculated KPI columns  
+- Cleaned formatting for Spend, Revenue, CPA  
+- Loaded final dataset into Power BI model  
 
-### **2. Power BI Modeling**
-- Built a star schema  
-- Created fact table for performance metrics  
-- Built dimension tables: Campaign, Channel, Date, Customer Segment  
+---
 
-### **3. DAX Measures**
+## 📐 **DAX Measures Created**
+
+- **Total Spend**  
+- **Total Revenue**  
+- **Total Clicks**  
+- **Total Orders**  
+- **CTR %**  
+- **Conversion Rate %**  
+- **CPA**  
+- **ROAS**  
+
+These measures power all visual KPIs in the dashboard.
+
+---
+
+## 📊 **Dashboard Pages**
+
+### **🟦 Page 1 — Executive Overview**
+- Total Spend  
 - Total Revenue  
-- ROI  
-- Conversion Rate  
-- Cost per Acquisition (CPA)  
-- Click-Through Rate (CTR)  
-- Revenue by Segment  
-
-### **4. Dashboard Pages**
-#### 📌 *Page 1: Executive Summary*
-- Total Revenue  
-- Total Conversions  
-- ROI  
-- Top 5 Campaigns  
-- Performance trends  
-
-#### 📌 *Page 2: Channel Analysis*
-- CPA by channel  
-- Revenue by channel  
-- Conversion rate comparison  
-
-#### 📌 *Page 3: Customer Segmentation*
-- Revenue by segment  
-- Conversion rate by segment  
-- Retention / repeat customers (if available)
+- Total Orders  
+- CTR %  
+- Conversion Rate %  
+- ROAS  
+- Revenue Trend Line  
 
 ---
 
-## 📸 **Screenshots (Coming Soon)**
-
-I will add exported PNG images from:
-- Executive Summary  
-- Channel Analysis  
-- Segment Overview  
+### **🟩 Page 2 — Channel Analysis**
+- Revenue by Channel  
+- CPA by Channel  
+- CTR % by Channel  
+- Date slicer (Between range)  
+- Campaign slicer  
 
 ---
 
-## 📦 Repository Structure
+### **🟧 Page 3 — Campaign Performance**
+- Campaign-level KPI comparison table  
+- Revenue Trend by Campaign  
+- Channel & Campaign slicers  
+
+---
+
+## 📸 **Dashboard Screenshots**
+
+### 📊 Executive Overview  
+![Executive Overview](reports/executive_overview.png)
+
+### 📈 Channel Analysis  
+![Channel Analysis](reports/channel_analysis.png)
+
+### 📉 Campaign Performance  
+![Campaign Performance](reports/campaign_performance.png)
+
+---
+
+## 📦 **Repository Structure**
 
 ```text
 marketing-performance-powerbi/
 │
 ├── data/
-│   └── marketing_data_sample.xlsx   (sample dataset)
+│   └── Marketing.csv
 │
 ├── reports/
-│   ├── dashboard_screenshot_1.png
-│   ├── dashboard_screenshot_2.png
-│   └── dashboard_screenshot_3.png
+│   ├── executive_overview.png
+│   ├── channel_analysis.png
+│   └── campaign_performance.png
 │
 ├── pbix/
-│   └── marketing_dashboard.pbix
+│   └── marketing_performance_dashboard.pbix
 │
 └── README.md
